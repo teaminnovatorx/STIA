@@ -117,4 +117,3 @@ Alignment with Africa CDC's "New Public Health Order" for continental deployment
 SENTRI is not a prototype; it is an **Immune System** for a continent. By merging elite NPU-accelerated AI with Swahili-derived logic and African-specific clinical research, we are closing the data vacuum once and for all.
 
 **The best is in our hands.**
-
