@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SENTRI | Team InnovatorX</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/framer-motion@11.11.10/dist/framer-motion.js"></script>
+    <style>
+        :root {
+            --bg-dark: #050505;
+            --accent-red: #ff3e3e;
+            --text-dim: #888;
+        }
+        body {
+            background-color: var(--bg-dark);
+            color: white;
+            font-family: 'Space Mono', monospace;
+            overflow-x: hidden;
+        }
+        .font-sync { font-family: 'Syncopate', sans-serif; }
+        
+        /* Scanline Effect */
+        .scanline {
+            width: 100%;
+            height: 100px;
+            z-index: 10;
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(255, 62, 62, 0.05) 50%, rgba(0, 0, 0, 0) 100%);
+            opacity: 0.1;
+            position: fixed;
+            bottom: 100%;
+            animation: scan 4s linear infinite;
+            pointer-events: none;
+        }
+        @keyframes scan {
+            from { bottom: 100%; }
+            to { bottom: -100px; }
+        }
+
+        .grid-bg {
+            background-image: linear-gradient(rgba(255, 62, 62, 0.03) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(255, 62, 62, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+
+        .glitch-text {
+            text-shadow: 0.05em 0 0 #ff3e3e, -0.05em -0.025em 0 #00fffc;
+            animation: glitch 1s infinite linear alternate-reverse;
+        }
+
+        @keyframes glitch {
+            0% { text-shadow: 0.05em 0 0 #ff3e3e, -0.05em -0.025em 0 #00fffc; }
+            14% { text-shadow: 0.05em 0 0 #ff3e3e, -0.05em -0.025em 0 #00fffc; }
+            15% { text-shadow: -0.05em -0.025em 0 #ff3e3e, 0.025em 0.025em 0 #00fffc; }
+            49% { text-shadow: -0.05em -0.025em 0 #ff3e3e, 0.025em 0.025em 0 #00fffc; }
+            50% { text-shadow: 0.025em 0.05em 0 #ff3e3e, -0.05em 0.05em 0 #00fffc; }
+            99% { text-shadow: 0.025em 0.05em 0 #ff3e3e, -0.05em 0.05em 0 #00fffc; }
+            100% { text-shadow: -0.025em 0 0 #ff3e3e, -0.025em -0.025em 0 #00fffc; }
+        }
+
+        .team-card {
+            background: rgba(255, 255, 255, 0.01);
+            border: 1px solid rgba(255, 62, 62, 0.1);
+            transition: all 0.3s ease;
+        }
+        .team-card:hover {
+            border-color: var(--accent-red);
+            background: rgba(255, 62, 62, 0.02);
+            transform: translateY(-5px);
+        }
+
+        .ticker-wrap {
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        .ticker {
+            display: inline-block;
+            animation: ticker 30s linear infinite;
+        }
+        @keyframes ticker {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+    </style>
+</head>
+<body>
+    <div class="scanline"></div>
+    <div class="fixed inset-0 grid-bg pointer-events-none"></div>
+
+    <!-- Ticker Top -->
+    <div class="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/5 py-2 text-[10px] uppercase tracking-widest text-red-500 overflow-hidden">
+        <div class="ticker-wrap">
+            <div class="ticker">
+                AMR MORTALITY RATE: 27.3/100K — SILENT PANDEMIC DETECTED — DATA VACUUM ACTIVE — SUBSAHARAN AFRICA ALERT — INNOVATORX ACTIVATED — 4.1M DEATHS PROJECTED BY 2050 — NO SURVEILLANCE DETECTED IN INFORMAL SECTORS — &nbsp;
+                AMR MORTALITY RATE: 27.3/100K — SILENT PANDEMIC DETECTED — DATA VACUUM ACTIVE — SUBSAHARAN AFRICA ALERT — INNOVATORX ACTIVATED — 4.1M DEATHS PROJECTED BY 2050 — NO SURVEILLANCE DETECTED IN INFORMAL SECTORS — &nbsp;
+            </div>
+        </div>
+    </div>
+
+    <main class="relative z-10 min-h-screen flex flex-col items-center pt-24 px-6">
+        <!-- Logo Section -->
+        <header class="text-center mb-16 mt-12">
+            <h1 class="font-sync text-5xl md:text-8xl font-bold tracking-tighter glitch-text mb-4">SENTRI</h1>
+            <p class="text-xs uppercase tracking-[0.5em] text-red-500 font-bold">Sentinel Emergency Network</p>
+            <div class="h-[1px] w-24 bg-red-500/50 mx-auto mt-6"></div>
+        </header>
+
+        <!-- Problem Section -->
+        <section class="max-w-4xl w-full mb-32 space-y-12">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="border-l-2 border-red-600 pl-6 py-4">
+                    <h2 class="text-2xl font-bold mb-4 tracking-tight uppercase">The Invisible Crisis</h2>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        80% of healthcare encounters in Sub-Saharan Africa occur in the informal sector. 
+                        No data. No tracking. No containment. 
+                        The silent pandemic of Antimicrobial Resistance is evolving in total darkness.
+                    </p>
+                </div>
+                <div class="bg-red-950/20 p-8 border border-red-900/30 rounded-sm">
+                    <div class="text-4xl font-bold text-red-500 mb-2">27.3</div>
+                    <p class="text-[10px] text-red-300 uppercase tracking-widest">Deaths per 100,000 People</p>
+                    <p class="text-[9px] text-gray-500 mt-4 leading-tight italic">
+                        *Africa reports the highest AMR mortality burden globally. (2025 Data)
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section class="max-w-6xl w-full mb-32">
+            <div class="text-center mb-16">
+                <h3 class="text-xs uppercase tracking-[1em] text-gray-500 mb-8">The Taskforce: Team InnovatorX</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    
+                    <!-- Member 1 -->
+                    <div class="team-card p-6 flex flex-col items-center text-center">
+                        <div class="w-16 h-16 bg-red-600/10 border border-red-500/20 rounded-full mb-4 flex items-center justify-center text-red-500 font-bold text-xl">
+                            OH
+                        </div>
+                        <h4 class="text-sm font-bold tracking-widest uppercase mb-1">Obinna Hosanna C.</h4>
+                        <p class="text-[10px] text-red-400 font-bold uppercase mb-2">Nigeria</p>
+                    </div>
+
+                    <!-- Member 2 -->
+                    <div class="team-card p-6 flex flex-col items-center text-center">
+                        <div class="w-16 h-16 bg-red-600/10 border border-red-500/20 rounded-full mb-4 flex items-center justify-center text-red-500 font-bold text-xl">
+                            PR
+                        </div>
+                        <h4 class="text-sm font-bold tracking-widest uppercase mb-1">Prince Raj</h4>
+                        <p class="text-[10px] text-red-400 font-bold uppercase mb-2">India</p>
+                    </div>
+
+                    <!-- Member 3 -->
+                    <div class="team-card p-6 flex flex-col items-center text-center">
+                        <div class="w-16 h-16 bg-red-600/10 border border-red-500/20 rounded-full mb-4 flex items-center justify-center text-red-500 font-bold text-xl">
+                            RM
+                        </div>
+                        <h4 class="text-sm font-bold tracking-widest uppercase mb-1">Rahel Moges</h4>
+                        <p class="text-[10px] text-red-400 font-bold uppercase mb-2">Ethiopia</p>
+                    </div>
+
+                    <!-- Member 4 -->
+                    <div class="team-card p-6 flex flex-col items-center text-center">
+                        <div class="w-16 h-16 bg-red-600/10 border border-red-500/20 rounded-full mb-4 flex items-center justify-center text-red-500 font-bold text-xl">
+                            IL
+                        </div>
+                        <h4 class="text-sm font-bold tracking-widest uppercase mb-1">Ishimwe Lilas</h4>
+                        <p class="text-[10px] text-red-400 font-bold uppercase mb-2">Burundi</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="text-center pb-32">
+            <div class="inline-block p-[1px] bg-gradient-to-r from-transparent via-red-500 to-transparent mb-8">
+                <div class="bg-black px-12 py-8">
+                    <h3 class="text-lg font-bold uppercase tracking-[0.2em] mb-4">Activation: Week One</h3>
+                    <p class="text-gray-500 text-[10px] uppercase tracking-widest mb-6">Bridging the invisible gap. Intelligence is arriving.</p>
+                    <a href="https://github.com/teaminnovatorx/STIA" class="inline-block bg-red-600 hover:bg-red-700 text-white text-[10px] font-bold px-8 py-3 tracking-widest uppercase transition-colors">
+                        Enter Repository
+                    </a>
+                </div>
+            </div>
+            
+            <p class="text-[9px] text-gray-700 uppercase tracking-widest mt-12">
+                Unified Decentralized Intelligence &copy; 2026 Team InnovatorX
+            </p>
+        </section>
+    </main>
+
+    <script>
+        // Simple entry animation using Framer Motion logic (manual implementation for single HTML)
+        window.addEventListener('load', () => {
+            const elements = document.querySelectorAll('header, section, .team-card');
+            elements.forEach((el, index) => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = `all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) ${index * 0.15}s`;
+                
+                setTimeout(() => {
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                }, 100);
+            });
+        });
+
+        // Ticker Logic (Duplicate ticker content for seamless loop)
+        const ticker = document.querySelector('.ticker');
+        ticker.innerHTML += ticker.innerHTML;
+    </script>
+</body>
+</html>
