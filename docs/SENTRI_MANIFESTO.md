@@ -43,8 +43,78 @@ We leverage a tiered ingestion strategy to ensure 100% coverage:
 
 #### 2.2 The Multi-Agent Intelligence Pipeline
 SENTRI deploys three specialized AI agents operating in a coordinated "Sentinel Loop":
-- **Agent A (Syndromic Ingestion):** The "Linguist." It normalizes unstructured data into a structured clinical schema.
+- **Agent A (Syndromic Ingestion):** The "Linguist." It normalizes unstructured data (OCR/ASR) into a structured clinical schema.
 - **Agent B (Pattern Analyzer):** The "Strategist." It applies Bayesian inference to correlate ingestion data with available lab results and wastewater surveillance, predicting resistance probability in a 5km radius.
 - **Agent C (Guidance & Alert):** The "Guardian." It delivers real-time, localized treatment advice back to the field workers via Push Notifications or SMS.
 
-*(End of Part 1 - Continues in Part 2)*
+---
+
+### III. THE SENTRI TIERED INTELLIGENCE ARCHITECTURE (STIA)
+
+Following the 2025-2026 research into NPU-acceleration, SENTRI implements a **Sovereign Mesh** model:
+1. **The Oracle (Tier 1 - District Hub):** NVIDIA Jetson AGX Thor running **OpenMedLLM-70B**. Handles deep reasoning and cross-district trend analysis.
+2. **The Sentinel (Tier 2 - Clinic Node):** NVIDIA Jetson Orin Nano Super running **MedGemma-27B**. Real-time OCR and clinic-level guidance.
+3. **The Field (Tier 3 - Mobile Node):** Llama-3.2-3B running locally on smartphones or Hailo-accelerated handhelds for instant syndromic capture.
+
+---
+
+### IV. THE 17-PHASE STRATEGIC ROADMAP (REVISED 2026)
+
+#### PHASE 00: THE SENTINEL MANIFESTO (INDEX & CORE VISION)
+Setting the vision: Health Sovereignty through Decentralized Intelligence.
+
+#### PHASE 01: THE DATA VACUUM ANALYSIS (AFRICAN AMR LANDSCAPE)
+Validating the "Blind Spots" in GLASS and Africa CDC surveillance using 2024-2025 mortality data.
+
+#### PHASE 02: THE ELITE RESEARCH REPORT (MODEL & HARDWARE SELECTION)
+Evaluating OpenMedLLM, MedGemma, and Jetson/Hailo silicon for the STIA stack.
+
+#### PHASE 03: ZENOH MESH PROCOTOL (DECENTRALIZED SYNC)
+Architecture for P2P data synchronization where internet infrastructure is unreliable.
+
+#### PHASE 4: MULTIMODAL INGESTION (INDUSTRIAL OCR/ASR)
+Developing TensorRT-accelerated pipelines for scanning pharmacy notes and drug packs.
+
+#### PHASE 05: SOVEREIGN RAG (LOCALIZED CLINICAL KNOWLEDGE GRAPH)
+Vectorizing 54 African National Essential Medicine Lists (EMLs) and informal market trends.
+
+#### PHASE 06: BEYESIAN PATTERN ANALYZER (AGENT B SPEC)
+Probabilistic modeling of resistance clusters under high uncertainty and reporting bias.
+
+#### PHASE 07: CLOSED-LOOP GUIDANCE (AGENT C ALERTING)
+Automated SMS/Voice and Push alerts adapted to local drug availability.
+
+#### PHASE 08: RUST CORE DEVELOPMENT (ZENOH BUS)
+Building the sub-millisecond data bus for edge-to-edge communication.
+
+#### PHASE 09: NPU QUANTIZATION (INT4/GGUF DEPLOYMENT)
+Optimizing Llama-3.2 and MedGemma for Jetson/Hailo silicon.
+
+#### PHASE 10: PRIVACY-FIRST PROTOCOL (ANONYMIZED HEALTH IDS)
+Implementing Differential Privacy at the ingestion layer to protect patient identity.
+
+#### PHASE 11: GEOSPATIAL HEATMAPPING (GIS INTEGRATION)
+Visualizing resistance "Hotspots" for district health authorities.
+
+#### PHASE 12: FIELD MOBILE SUITE (FLUTTER/DART)
+High-performance field application for CHWs and informal pharmacists.
+
+#### PHASE 13: AUTHORITY WEB SUITE (REACT/D3)
+High-fidelity dashboards for national health surveillance centers.
+
+#### PHASE 14: SYSTEM INTEGRATION & MESH TESTING
+Validating the STIA pipeline across Tier 1, 2, and 3 nodes.
+
+#### PHASE 15: FIELD PILOT & VALIDATION (SANGER INSTITUTE DATA)
+Calibrating Agent B against ground-truth genomic resistance profiles.
+
+#### PHASE 16: SCALING & PAN-AFRICAN ADVOCACY
+Alignment with Africa CDC's "New Public Health Order" for continental deployment.
+
+---
+
+### V. CONCLUSION
+SENTRI is not a prototype; it is an **Immune System** for a continent. By merging elite NPU-accelerated AI with Swahili-derived logic and African-specific clinical research, we are closing the data vacuum once and for all.
+
+**The best is in our hands.**
+
